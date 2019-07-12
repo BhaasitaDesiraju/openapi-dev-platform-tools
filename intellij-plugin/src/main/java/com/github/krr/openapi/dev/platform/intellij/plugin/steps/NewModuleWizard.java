@@ -1,5 +1,6 @@
 package com.github.krr.openapi.dev.platform.intellij.plugin.steps;
 
+import com.github.krr.openapi.dev.platform.intellij.plugin.module.OpenApiModuleType;
 import com.intellij.ide.util.projectWizard.ModuleBuilder;
 import com.intellij.ide.util.projectWizard.ModuleWizardStep;
 import com.intellij.ide.util.projectWizard.WizardContext;
@@ -15,7 +16,7 @@ public class NewModuleWizard extends ModuleBuilder {
 
   @Override
   public ModuleType getModuleType() {
-    return ModuleType.EMPTY;
+    return new OpenApiModuleType("openApiModule");
   }
 
   @Override
