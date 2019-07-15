@@ -1,12 +1,9 @@
 package com.github.krr.openapi.dev.platform.intellij.plugin.module;
 
 import com.intellij.ide.util.projectWizard.ModuleBuilder;
-import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleType;
-import com.intellij.openapi.projectRoots.Sdk;
 import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 
@@ -23,7 +20,6 @@ public class OpenApiModuleType extends ModuleType {
         return new ModuleBuilder() {
             @Override
             public ModuleType getModuleType() {
-
                 return new OpenApiModuleType("openApi");
             }
         };
@@ -47,7 +43,4 @@ public class OpenApiModuleType extends ModuleType {
         return null;
     }
 
-    public boolean isValidSdk(@NotNull Module module, @Nullable final Sdk projectSdk) {
-        return true;
-    }
 }
