@@ -72,7 +72,11 @@ public class NewModuleWizard extends ModuleBuilder {
 
                     @Override
                     public void updateDataModel() {
-
+                      ProjectParameters projectParameters = new ProjectParameters();
+                      projectParameters.setGroupId(groupId.getText());
+                      projectParameters.setArtifactId(artifactId.getText());
+                      projectParameters.setVersion(version.getText());
+                      //Set project name and project location
                     }
 
                     @SuppressWarnings("unused")
