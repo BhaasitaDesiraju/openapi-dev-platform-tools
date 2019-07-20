@@ -5,14 +5,9 @@ import org.apache.maven.archetype.ArchetypeGenerationResult;
 import org.apache.maven.archetype.DefaultArchetypeManager;
 import org.apache.maven.archetype.common.DefaultArchetypeArtifactManager;
 import org.apache.maven.archetype.generator.DefaultArchetypeGenerator;
-import org.apache.maven.artifact.repository.ArtifactRepository;
-import org.apache.maven.artifact.repository.ArtifactRepositoryPolicy;
-import org.apache.maven.artifact.repository.MavenArtifactRepository;
-import org.apache.maven.artifact.repository.layout.DefaultRepositoryLayout;
 import org.jetbrains.annotations.NotNull;
 import org.springframework.util.ReflectionUtils;
 
-import java.io.File;
 import java.lang.reflect.Field;
 import java.net.MalformedURLException;
 import java.util.Properties;

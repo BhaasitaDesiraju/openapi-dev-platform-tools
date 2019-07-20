@@ -4,8 +4,6 @@ import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.maven.archetype.DefaultArchetypeManager;
 import org.apache.maven.archetype.common.DefaultArchetypeArtifactManager;
-import org.apache.maven.archetype.generator.ArchetypeGenerator;
-import org.apache.maven.archetype.generator.DefaultArchetypeGenerator;
 import org.springframework.util.ReflectionUtils;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -15,8 +13,6 @@ import org.testng.annotations.Test;
 import java.io.File;
 import java.io.IOException;
 import java.lang.reflect.Field;
-
-import static org.testng.Assert.*;
 
 public class OpenApiProjectCreatorTest {
 
@@ -41,13 +37,10 @@ public class OpenApiProjectCreatorTest {
     projectParameters.setVersion(RandomStringUtils.randomAlphabetic(3));
     OpenApiProjectCreator openApiProjectCreator = new OpenApiProjectCreator();
     openApiProjectCreator.create(projectParameters);
-    //Assert that a folder has been created
-    //try to create a dir and check if that exists
 //    Assert.assertTrue()
   }
 
-  //illegal arguments exception
-  //give null parameters and
+  //should throw illegal args exception for null params
 
   @AfterClass
   public void teardown() throws IOException {
