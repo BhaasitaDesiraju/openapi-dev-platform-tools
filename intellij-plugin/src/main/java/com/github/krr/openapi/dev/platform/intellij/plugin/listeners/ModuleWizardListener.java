@@ -1,4 +1,4 @@
-package com.github.krr.openapi.dev.platform.intellij.plugin.Listeners;
+package com.github.krr.openapi.dev.platform.intellij.plugin.listeners;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
