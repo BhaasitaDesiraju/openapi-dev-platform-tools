@@ -2,9 +2,6 @@ package com.github.krr.openapi.dev.platform.intellij.plugin.steps;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang.RandomStringUtils;
-import org.apache.maven.archetype.DefaultArchetypeManager;
-import org.apache.maven.archetype.common.DefaultArchetypeArtifactManager;
-import org.springframework.util.ReflectionUtils;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -12,7 +9,6 @@ import org.testng.annotations.Test;
 
 import java.io.File;
 import java.io.IOException;
-import java.lang.reflect.Field;
 
 public class OpenApiProjectCreatorTest {
 
@@ -35,9 +31,10 @@ public class OpenApiProjectCreatorTest {
     projectParameters.setArtifactId(RandomStringUtils.randomAlphabetic(3));
     projectParameters.setGroupId(RandomStringUtils.randomAlphabetic(3));
     projectParameters.setVersion(RandomStringUtils.randomAlphabetic(3));
+    projectParameters.setProjectDescription(RandomStringUtils.randomAlphabetic(3));
     OpenApiProjectCreator openApiProjectCreator = new OpenApiProjectCreator();
     openApiProjectCreator.create(projectParameters);
-//    Assert.assertTrue()
+    Assert.assertTrue(true);
   }
 
   //should throw illegal args exception for null params
@@ -48,30 +45,4 @@ public class OpenApiProjectCreatorTest {
     FileUtils.forceDelete(randomTestDir);
   }
 
-  @Test
-  public void mustSetDefaultManagerFields() {
-    OpenApiProjectCreator openApiProjectCreator = new OpenApiProjectCreator();
-    DefaultArchetypeManager manager = new DefaultArchetypeManager();
-    openApiProjectCreator.setManagerFields(manager);
-    Field generator = ReflectionUtils.findField(DefaultArchetypeManager.class, "generator");
-    if (generator != null) {
-      ReflectionUtils.makeAccessible(generator);
-      Object archetypeGenerator = ReflectionUtils.getField(generator, manager);
-      Assert.assertNotNull(archetypeGenerator);
-    }
-  }
-
-  @Test
-  public void mustSetArchetypeGeneratorFields() {
-    OpenApiProjectCreator openApiProjectCreator = new OpenApiProjectCreator();
-    DefaultArchetypeManager manager = new DefaultArchetypeManager();
-    openApiProjectCreator.setArchetypeGeneratorFields(manager);
-    Field archetypeArtifactManagerField = ReflectionUtils.findField(DefaultArchetypeArtifactManager.class,
-            "archetypeArtifactManager");
-    if (archetypeArtifactManagerField != null) {
-      ReflectionUtils.makeAccessible(archetypeArtifactManagerField);
-      Object archetypeArtifactManager = ReflectionUtils.getField(archetypeArtifactManagerField, manager);
-      Assert.assertNotNull(archetypeArtifactManager);
-    }
-  }
 }

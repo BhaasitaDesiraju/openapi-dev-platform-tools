@@ -1,13 +1,11 @@
 <idea-plugin>
-    <id>com.github.krraghavan.dev-platform-intellij-plugin</id>
-    <!--suppress PluginXmlValidity -->
-    <name>Open API Development Platform IntelliJ Plugin</name>
-    <vendor email="raghavan@nutanix.com" url="http://www.nutanix.com">Nutanix</vendor>
+    <id>org.github.krr.openapi-dev-platform-intellij-plugin</id>
+    <name>Plugin display name here</name>
+    <vendor email="support@yourcompany.com" url="http://www.yourcompany.com">YourCompany</vendor>
 
-    <!--suppress PluginXmlValidity -->
     <description><![CDATA[
-    Allows the creation of projects inside Intellij with support for
-    adding endpoints and models as well as macros
+    Enter short description for your plugin here.<br>
+    <em>most HTML tags may be used</em>
     ]]></description>
 
     <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
@@ -17,11 +15,7 @@
     -->
 
     <extensions defaultExtensionNs="com.intellij">
-
         <!-- Add your extensions here -->
-        <moduleBuilder builderClass="com.github.krr.openapi.dev.platform.intellij.plugin.steps.NewModuleWizard"
-                       id="OpenAPIProject"
-                       order="first"/>
     </extensions>
 
     <actions>
